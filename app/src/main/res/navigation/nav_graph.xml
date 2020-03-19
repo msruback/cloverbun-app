@@ -6,12 +6,12 @@
     app:startDestination="@id/aboutFragment">
     <fragment
         android:id="@+id/statFragment"
-        android:name="com.msruback.cloverbun.StatFragment"
+        android:name="com.msruback.cloverbun.fragments.nav.StatFragment"
         android:label="fragment_stat"
         tools:layout="@layout/fragment_stat" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.msruback.cloverbun.AboutFragment"
+        android:name="com.msruback.cloverbun.fragments.nav.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
 </navigation>
