@@ -15,8 +15,8 @@
         android:text="@string/about"
         android:textAlignment="center"
         android:textSize="13pt"
-        app:layout_constraintLeft_toLeftOf="@id/centerline"
-        app:layout_constraintRight_toRightOf="@id/centerline"
+        app:layout_constraintLeft_toLeftOf="@id/center_line"
+        app:layout_constraintRight_toRightOf="@id/center_line"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageButton
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@id/title" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/centerline"
+        android:id="@+id/center_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.msruback.cloverbun.R
 
 
-class AboutFragment : AuthorizedFragment() {
+class LoginFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,12 +19,12 @@ class AboutFragment : AuthorizedFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        super.onCreate(savedInstanceState)
-        return inflater.inflate(R.layout.fragment_about, container, false)
+        return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
     companion object {
-
-        fun newInstance() = AboutFragment()
+        @JvmStatic
+        fun newInstance() =
+            LoginFragment()
     }
 }
