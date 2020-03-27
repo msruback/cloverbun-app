@@ -1,13 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.nav.LoginFragment">
-
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="LOGIN"></TextView>
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/errorBubble"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:text="Log In"
+        style="@style/TextTheme"
+        android:textSize="50sp"
+        android:layout_marginBottom="25dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/errorBubble"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="25dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/loginBubble">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:backgroundTint="@color/colorError"
+            android:text="@string/failInvalid"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAlignment="center"
+            android:padding="5dp"/>
 
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginBubble"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/vertical_line"
+        app:layout_constraintBottom_toBottomOf="@id/vertical_line"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/colorOffAccent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:padding="15dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:hint="Email"
+            style="@style/TextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <EditText
+            android:id="@+id/password"
+            android:hint="Password"
+            style="@style/TextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/email"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            style="@style/ButtonTheme"
+            android:padding="10dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintRight_toRightOf="@id/horizontal_line"
+            app:layout_constraintLeft_toLeftOf="@id/horizontal_line"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/vertical_line"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent=".5"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

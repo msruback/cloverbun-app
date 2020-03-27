@@ -8,11 +8,7 @@ import android.view.ViewGroup
 import com.msruback.cloverbun.R
 
 
-class StatFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+class StatFragment : AuthorizedFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
